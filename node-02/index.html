@@ -1,17 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // document.cookie = 'username=test';
+        (async () => {
+            axios.defaults.baseURL = 'http://localhost:3000'
+            axios.defaults.withCredentials = true
+            const res = await axios.get("/users", {
+                headers: {
+                    'X-Token': 'jilei',
+                }
+            })
+            console.log(res)
+            console.log("data", res.data)
+        })()
+    </script>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script>
-    (async () => {
-        axios.defaults.baseURL = 'http://localhost:3000'
-        axios.defaults.withCredentials = true
-        const res = await axios.get("/users", {
-            headers: {
-                'X-Token': 'jilei'
-            }
-        })
-        console.log("data", res.data)
-    })()
-</script>
-123
+    <script>
+        (async () => {
+            axios.defaults.baseURL = 'https://cdn.segmentfault.com/v-5f4c9b92/global/css/global.css'
+            const res = await axios.get("/", {
+            })
+            console.log(res)
+            console.log("data", res.data)
+        })()
+    </script>
+
+    123
+</body>
+</html>
+
+
 
 
