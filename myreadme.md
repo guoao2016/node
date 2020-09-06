@@ -21,3 +21,8 @@ s,yUXaz!?9Vy
 mysqld --defaults-file="C:\mysql\mysql-8.0.20-winx64\my.ini" --console --skip-grant-tables
 
 [[docker][win10]安装的坑](https://www.jianshu.com/p/09d53c822cf8)
+
+### koa
+一. 中间件
+1. 顺序执行需要  -- 转账--鉴权
+2. 

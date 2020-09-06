@@ -18,9 +18,9 @@ const server = http.createServer((req, res) => {
         res.writeHead(200, {'Content-Type': 'application/json'})
         res.end(JSON.stringify({name: 'xiao'}))
     }
-    // else if(method === 'GET' && headers.accept.indexOf('image/*') !== -1){
-    //     fs.createReadStream('.' + url).pipe(res)
-    // }
+    else if(method === 'GET' && headers.accept.indexOf('image/*') !== -1){
+        fs.createReadStream('.' + url).pipe(res)
+    }
 
 // 优化 大段 if else
     const router = []
