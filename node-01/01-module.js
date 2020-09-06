@@ -1,6 +1,6 @@
 
-console.log('hello node --!!!')
-
-// state.js
+// 引入state模块
 const {getState} = require('./state')
-setInterval(getState, 2000)
+
+
+setInterval(getState, 5000)

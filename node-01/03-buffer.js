@@ -8,15 +8,11 @@ console.log(buf2)
 
 const buf3 = Buffer.from('Buffer 创建方法')
 
-console.log(buf3.toString())
+console.log(buf3.toString());
 
-buf1.write('hello')  // 写入buf1
-
-console.log('buf1:', buf1)
-
-// 拼接
+buf1.write('hello')
+console.log('buf1:', buf1);
 
 const buf4 = Buffer.concat([buf1, buf3])
+console.log('buf4', buf4.toString());
 
-console.log('buf4:', buf4.toString())
-console.log('buf4:', buf4.toJSON())

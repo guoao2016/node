@@ -6,23 +6,41 @@ const fs = require('fs')
 
 http.createServer((req, res) => {
     const {method, url} = req;
-    console.log('cookie', req.headers.cookie)
     console.log(method)
+    console.log('cookie', req.headers.cookie)
     if(method == "GET" && url =='/'){
         fs.readFile("./index.html", (err, data) => {
             res.setHeader("Content-Type", "text/html");
             res.end(data);
         })
     }else if(method == 'GET' && url == '/users'){
-       cors(res);
+       cors(res)
+    //    Secure
+       res.setHeader("Set-Cookie", "cookie1=va222;SameSite=None;")
        res.end(JSON.stringify([{name: 'tom', age: 20}]))
     }else if(method == 'OPTIONS' && url == '/users'){
-        cors(res);
+       cors(res)
         res.end();
     }
 }).listen(3000)
 
 function cors(res){
+    res.setHeader('Content-Type', 'application/json')
+    res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:8080")
+
+    // 复杂请求
+    res.setHeader("Access-Control-Allow-Headers", "X-Token,x-test,Content-Type")
+
+    // cookie
+    res.setHeader("Access-Control-Allow-Credentials", "true") 
+}
+
+    
+
+
+
+
+function cors1(res){
     res.setHeader("Set-Cookie", "cookie1=va222;HttpOnly")
     res.setHeader("Cache-Control", "public; max-age=20000")
 

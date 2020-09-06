@@ -8,34 +8,18 @@
 <body>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        // document.cookie = 'username=test';
-        (async () => {
-            axios.defaults.baseURL = 'http://localhost:3000'
-            axios.defaults.withCredentials = true
-            const res = await axios.get("/users", {
+        let fn = async ()=>{
+            axios.defaults.baseURL ='http://127.0.0.1:3000'
+            axios.defaults.withCredentials = true;
+            const res = await axios.get('/users', {
                 headers: {
-                    'X-Token': 'jilei',
+                    'X-Token': 'jilei'
                 }
-            })
-            console.log(res)
-            console.log("data", res.data)
-        })()
+            });
+            console.log('data', res.data);
+        }
+        fn();
     </script>
-
-    <script>
-        (async () => {
-            axios.defaults.baseURL = 'https://cdn.segmentfault.com/v-5f4c9b92/global/css/global.css'
-            const res = await axios.get("/", {
-            })
-            console.log(res)
-            console.log("data", res.data)
-        })()
-    </script>
-
-    123
 </body>
 </html>
-
-
-
 

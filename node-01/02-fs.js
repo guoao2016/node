@@ -1,21 +1,28 @@
-// const fs = require('fs')
-// // const data = fs.readFileSync('./package.json')
-// // console.log(data)   // 二进制
-// // console.log(data.toString('utf-8'))
+const fs = require('fs')
+// const data = fs.readFileSync('./package.json')
+// console.log(data.toString());
+const {promisify} = require('util')
 
-// const {promisify} = require('util');
-// const readFile = promisify(fs.readFile);
+// 异步- promies 处理
+const readFile = promisify(fs.readFile)
 
-// // fs.readFileSync('./package.json', (err, data) => {
-// //     console.log(data.toString('utf-8'))
-// // })
-
-// readFile('./package.json').then( data => {
-//     console.log(data.toString())
+// fs.readFile('./package.json', (err, data)=>{
+//     console.log(data.toString('utf-8'));
+    
 // })
 
-const fs = require('fs')
-fs.readFile('./package.json',(err, data)=>{
+// promise调用
+// readFile('./package.json').then(data => {
+//     console.log(data.toString());
     
-})
+// })
 
+
+// async/await
+const readFileFn = async ()=> {
+    const data = await readFile('./package.json');
+    console.log(data.toString())
+    console.log(`end`);
+}
+
+readFileFn();
