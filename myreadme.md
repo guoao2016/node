@@ -26,3 +26,10 @@ mysqld --defaults-file="C:\mysql\mysql-8.0.20-winx64\my.ini" --console --skip-gr
 一. 中间件
 1. 顺序执行需要  -- 转账--鉴权
 2. 
+
+
+
+### 哈希Hash  - SHA MD5
+1. 把一个不定长摘要定长结果
+2. 摘要xialaoshi -> x31sss - 防篡改
+3. 雪崩效应 （小的改动也会导致结果剧烈变化）

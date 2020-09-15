@@ -10,6 +10,7 @@ router.get('/', async ctx => {
         subTitle: "handlebars语法",
         isShow: true,
         username: "jerry",
+        htmlStr: '<h3>html-test</h3>',
         users: [{
             username: "tom",
             age: 20
