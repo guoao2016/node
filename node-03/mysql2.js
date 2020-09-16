@@ -19,9 +19,8 @@
 //         `)
 
     // 插入数据
-    ret = await connection.execute(`
-        INSERT INTO test(message) VALUE(?)
-    `,['ABC'])
+    let insertSql = ` INSERT INTO test(message) VALUE(?)`
+    ret = await connection.execute(insertSql, ['ABC'])
     // console.log('insert', ret);
 
 
